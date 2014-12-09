@@ -11,15 +11,11 @@ Quickstart
 
     pip install -r requirements.txt
    
-In two separate terminals:
+then:
 
-    python server.py
+    python server.py & python manage.py runserver
 
-and
 
-    python manage.py runserver
-   
-   
 Admin Credentials
 -----------------
 
