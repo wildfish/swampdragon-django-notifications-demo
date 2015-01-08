@@ -20,7 +20,9 @@ var notificationsList = document.getElementById("notifications");
 // New channel message received
 function onChannelMessage(channels, message) {
     // Add the notification
-    addNotification((message.data));
+    if (message.action === "created") {
+        addNotification((message.data));
+    }
 }
 
 
@@ -41,8 +43,8 @@ function addNotification(notification) {
 
     // Add the new notification
     var li = document.createElement("li");
+    li.innerHTML = notification.message;
     notificationsList.insertBefore(li, notificationsList.firstChild);
-    li.innerText = notification.message;
 
     // Remove excess notifications
     while (notificationsList.getElementsByTagName("li").length > 5) {
