@@ -86,6 +86,7 @@ STATIC_URL = '/static/'
 
 # SwampDragon settings
 SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
+DRAGON_URL = 'http://localhost:9999/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 

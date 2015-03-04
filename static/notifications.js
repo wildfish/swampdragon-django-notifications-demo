@@ -10,27 +10,24 @@ window.addEventListener('load', function () {
 });
 
 
-// Create an instance of vanilla dragon
-var dragon = new VanillaDragon({onopen: onOpen, onchannelmessage: onChannelMessage});
+// Subscribe once swampdragon is connected
+swampdragon.open(function () {
+    swampdragon.subscribe('notifications', 'notifications');
+
+});
 
 // This is the list of notifications
 var notificationsList = document.getElementById("notifications");
 
 
 // New channel message received
-function onChannelMessage(channels, message) {
+swampdragon.onChannelMessage(function (channels, message) {
     // Add the notification
     if (message.action === "created") {
         addNotification((message.data));
     }
-}
+});
 
-
-// SwampDragon connection open
-function onOpen() {
-    // Once the connection is open, subscribe to notifications
-    dragon.subscribe('notifications', 'notifications');
-}
 
 
 // Add new notifications

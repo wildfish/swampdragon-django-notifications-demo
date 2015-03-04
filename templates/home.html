@@ -1,3 +1,4 @@
+{% load static swampdragon_tags %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -17,11 +18,8 @@
 
 
 <!-- SwampDragon -->
-<script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/vendor/sockjs-0.3.4.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/swampdragon.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/datamapper.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}swampdragon/js/swampdragon-vanilla.js"></script>
-<script type="text/javascript" src="http://localhost:9999/settings.js"></script>
+{% swampdragon_settings %}
+<script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
 
 <!-- notifications -->
 <script type="text/javascript" src="{{ STATIC_URL }}notifications.js"></script>
