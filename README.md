@@ -13,7 +13,8 @@ Quickstart
    
 then:
 
-    python server.py & python manage.py runserver
+    python manage.py runserver
+    ptyhon manage.py runsd
 
 
 Admin Credentials
