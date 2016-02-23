@@ -14,7 +14,7 @@ Quickstart
 then:
 
     python manage.py runserver
-    ptyhon manage.py runsd
+    python manage.py runsd
 
 
 Admin Credentials
